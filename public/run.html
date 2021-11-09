@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+  <link rel="stylesheet" href="styles/bootstrap-material-design.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <title>Workout Tracker</title>
+</head>
+
+<body id="runPageBody">
+  <nav class="navbar navbar-dark fixed-top">
+    <a id="homePageLink" class="navbar-brand" href="#">Home Page</a>
+  </nav>
+  <div id="runPage" class="container page-container">
+    <br>
+    <img id="runImg" src="images/Runner.jpg" alt="">
+    <br>
+    <div id="runSelection">
+      <div class="form-group">
+        <label for="runDistanceInput">Title of Run</label>
+        <input class="form-control" id="runTitleInput" placeholder="Run Title">
+      </div>
+      <div class="form-group">
+        <label for="runTimeInput">Run Time</label>
+        <br>
+        <input id="runTimeInput" type="text" class="html-duration-picker" min="00:00:10" max="5:00:00" required />
+        <!-- <label for="exampleInputEmail1">Run</label>
+        <input type="time" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter run duration" required> -->
+      </div>
+      <div class="form-group">
+        <label for="runDistanceInput">Enter run distance (in miles)</label>
+        <input type="number" class="form-control" id="runDistanceInput" placeholder="Run distance" min=".1" max="26"
+          step=".01" required>
+      </div>
+      <button id="runSubmitButton" class="btn btn-primary">Submit</button>
+      <br>
+    </div>
+
+
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/popper.js"></script>
+    <script src="scripts/bootstrap-material-design.js"></script>
+    <script>
+      $("body").bootstrapMaterialDesign();
+    </script>
+    <script src="/__/firebase/7.18.0/firebase-app.js"></script>
+    <script src="/__/firebase/7.18.0/firebase-analytics.js"></script>
+    <script src="/__/firebase/7.18.0/firebase-auth.js"></script>
+    <script src="/__/firebase/7.18.0/firebase-firestore.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <script src="dist/html-duration-picker.js-master/dist/html-duration-picker.min.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+  <link rel="stylesheet" href="styles/bootstrap-material-design.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <title>Workout Tracker</title>
+</head>
+
+<body id="liftPageBody">
+  <nav class="navbar navbar-dark fixed-top">
+    <a id="homePageLink" class="navbar-brand" href="#">Home Page</a>
+  </nav>
+  <div id="liftPage" class="container page-container">
+    <img id="weightImg" src="images/weights.png" alt="">
+    <div id="liftSelection">
+      <h4>Choose your lift</h4>
+      <div class="form-check" id="benchInput">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="bench">
+        <label class="form-check-label" for="flexRadioDefault1">
+          Bench Press
+        </label>
+      </div>
+      <div class="form-check" id="squatInput">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="squat">
+        <label class="form-check-label" for="flexRadioDefault2">
+          Squat
+        </label>
+      </div>
+      <div class="form-check" id="deadliftInput">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="deadlift">
+        <label class="form-check-label" for="flexRadioDefault2">
+          Deadlift
+        </label>
+      </div>
+      <br>
+      <p id="fixedWeightText">Fixed Weight & Reps?</p>
+      <!-- Rounded switch -->
+      <label class="switch">
+        <input id="fixedWeightCheckbox" type="checkbox" checked>
+        <span class="slider round"></span>
+      </label>
+      <div id="fixedWeightContainer">
+        <div class="form-group">
+          <label for="setsInput">Sets</label>
+          <input type="number" class="form-control" id="setsInput" placeholder="Enter the number of sets you did">
+        </div>
+        <div class="form-group">
+          <label for="repsInput">Reps</label>
+          <input type="number" class="form-control" id="repsInput"
+            placeholder="Enter the number of reps you did each set">
+        </div>
+        <div class="form-group">
+          <label for="weightInput">Weight</label>
+          <input type="number" class="form-control" id="weightInput" placeholder="Enter the weight you lifted">
+        </div>
+      </div>
+      <div id="customWeightContainer">
+        <div class="customWeightEntry" class="row">
+        </div>
+        <button id="addSet" type="button" class="btn bmd-btn-fab">
+          <i class="material-icons">add</i>
+        </button>
+        <br>
+      </div>
+      <button id="liftSubmitButton" type="submit" class="btn btn-primary">Submit</button>
+      <br>
+    </div>
+    <div id="returnScreen"></div>
+  </div>
+
+
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/popper.js"></script>
+  <script src="scripts/bootstrap-material-design.js"></script>
+  <script>
+    $("body").bootstrapMaterialDesign();
+  </script>
+  <script src="/__/firebase/7.18.0/firebase-app.js"></script>
+  <script src="/__/firebase/7.18.0/firebase-analytics.js"></script>
+  <script src="/__/firebase/7.18.0/firebase-auth.js"></script>
+  <script src="/__/firebase/7.18.0/firebase-firestore.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="dist/html-duration-picker.js-master/dist/html-duration-picker.min.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>

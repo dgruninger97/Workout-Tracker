@@ -1,0 +1,603 @@
+:root {
+  --runColor: rgb(255, 165, 0);
+  --ourOrange: #fc4c02;
+  --liftColor: rgb(0, 128, 0);
+  --bothColor: rgb(255, 192, 203);
+}
+
+html,
+body {
+  background: purple;
+  height: 100%;
+  font-size: 100%;
+  line-height: 1.5;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.bmd-label-static{
+  color: black;
+  font-size: 1em !important;
+}
+
+
+/* Navbar */
+.navbar {
+  background-color: var(--ourOrange);
+  color: white;
+}
+
+/* fab calendar */
+#fab {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  background: var(--ourOrange);
+  color: white;
+  z-index: 999;
+  user-select: none;
+}
+
+#fab:active {
+  transform: translateY(2px);
+  opacity: 0.8;
+}
+
+/* logout */
+#logout {
+  position: fixed;
+  background: var(--ourOrange);
+  color: white;
+  z-index: 999;
+  user-select: none;
+  left: 10px;
+  bottom: 10px;
+}
+
+#logout:active {
+  transform: translateY(2px);
+  opacity: 0.8;
+}
+
+.page-container {
+  margin-top: 75px;
+}
+
+.modal-content {
+  background-color: grey;
+}
+
+.cancel {
+  background-color: var(--ourOrange);
+  color: black;
+}
+
+#modalTitle{
+  margin: auto;
+}
+
+#runButton{
+  background: var(--runColor);
+  color: black;
+  user-select: none;
+  width: 7em;
+}
+
+#runButtonDay{
+  background: var(--runColor);
+  color: white;
+  user-select: none;
+}
+
+#liftButton{
+  background: var(--liftColor);
+  color: black;
+  user-select: none;
+  width: 7em;
+}
+
+#liftButtonDay {
+  background: var(--liftColor);
+  color: white;
+  user-select: none;
+}
+
+#liftDemo{
+  background-color: var(--liftColor);
+  pointer-events: none;
+
+}
+
+#runDemo{
+  background-color: var(--runColor);
+  pointer-events: none;
+}
+
+#bothDemo{
+  background-color: rgb(255, 192, 203);
+  pointer-events: none;
+}
+
+#legend{
+  text-align: center;
+}
+
+#addWorkout{
+  text-align: center;
+}
+
+/* Time and Clock */
+#date, #dateHeader{
+  color: white;
+  text-align: center;
+  font-family: roboto;
+  user-select: none;
+}
+#dateHeader{
+  font-size: 20px;
+}
+
+#date {
+  font-size: 3em;
+  /* -webkit-transform: scale(1,1.5); */
+  margin: 0;
+  font-weight: lighter;
+  font-weight: bold;
+}
+
+
+/* Calendar */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: baseline;
+}
+
+a {
+  text-decoration: none;
+}
+
+.calendar-wrapper {
+  width: 360px;
+  margin: 10px auto;
+  padding: 2em;
+  border: 1px solid #dcdcff;
+  border-radius: 5px;
+  background: grey;
+}
+
+table {
+  clear: both;
+  width: 100%;
+  /* border: 1px solid #dcdcff; */
+  border-radius: 3px;
+  border-collapse: collapse;
+  color: black;
+  user-select: none;
+}
+
+td {
+  height: 36px;
+  text-align: center;
+  vertical-align: middle;
+  /* border-right: 1px solid #dcdcff; */
+  /* border-top: 1px solid #dcdcff; */
+  width: 14.28571429%;
+}
+
+td.not-current {
+  color: lightgrey;
+}
+
+td.normal:active {
+  background-color: lightgray;
+  border-radius: 30px;
+}
+
+td.today {
+  font-weight: 700;
+  color: var(--ourOrange);
+  font-size: 1.5em;
+}
+
+td.today:active {
+  background-color: lightgray;
+  border-radius: 30px;
+}
+
+thead td {
+  border: none;
+  color: #28283b;
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+
+#btnPrev {
+  float: left;
+  margin-bottom: 20px;
+}
+
+/* #btnPrev:before {
+  content: '\f104';
+  font-family: FontAwesome;
+  padding-right: 4px;
+} */
+#btnNext {
+  float: right;
+  margin-bottom: 20px;
+}
+
+/* #btnNext:after {
+  content: '\f105';
+  font-family: FontAwesome;
+  padding-left: 4px;
+} */
+#btnPrev,
+#btnNext {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  color: #c0c0c0;
+  cursor: pointer;
+  font-family: "Roboto Condensed", sans-serif;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+#btnPrev:hover,
+#btnNext:hover,
+.arrow:hover {
+  color: #28283b;
+  font-weight: bold;
+}
+
+/* Arrow */
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+#runPageBody {
+  background: var(--runColor);
+}
+
+#liftPageBody {
+  background: var(--liftColor);
+}
+
+#liftSelection {
+  background-color: white;
+  padding: 10px;
+}
+
+#runSelection {
+  background-color: white;
+  padding: 10px;
+}
+
+
+
+
+
+/* Toggle Straight Sets, from https://www.w3schools.com/howto/howto_css_switch.asp*/
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 17px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .1s;
+  transition: .1s;
+}
+
+input:checked+.slider {
+  background-color: #2196F3;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(13px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 17px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#fixedWeightText {
+  margin-bottom: 0px;
+}
+
+#fixedWeightContainer {
+  display: block;
+}
+
+#customWeightContainer {
+  display: none;
+}
+
+.column {
+  float: left;
+  width: 30.33%;
+  margin-left: 15px;
+  padding-top: 15px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#setCount {
+  text-align: center;
+}
+
+.setCount{
+  text-align: center;
+}
+
+/* fab lift add set */
+#addSet {
+  background: var(--ourOrange);
+  color: white;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: block;
+}
+
+#addSet:active {
+  transform: translateY(2px);
+  opacity: 0.8;
+}
+
+hr {
+  border-color: var(--ourOrange);
+}
+
+/* Login Page */
+
+#signInText {
+  font-size: 2em;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+}
+
+#liftingImg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  width: 200px;
+}
+#runImg {
+  margin: auto;
+  display: block;
+  width: 50%;
+  width: 200px;
+}
+
+/* Day Page */
+
+.dayHeader {
+  font-size: 2em;
+  text-align: center;
+}
+
+details {
+  text-align: center;
+  border-radius: 10px;
+  background-color: var(--ourOrange);
+  margin: 10px;
+  user-select: none;
+}
+
+details>summary {
+  list-style-type: none;
+  padding: 0;
+}
+
+details>div>p {
+  margin: 0;
+}
+
+
+details[open] {
+  background-color: var(--ourOrange);
+  margin: 10px;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 10%;
+}
+
+#runContainer {
+  display: none;
+  background-color: var(--runColor);
+  padding: 5px;
+  border-radius: 25px;
+}
+
+#liftContainer {
+  display: none;
+  background-color: var(--liftColor);
+  padding: 5px;
+  border-radius: 25px;
+}
+
+.editer {
+  margin: 0 auto;
+  font-size: 3em;
+  background: grey;
+  border-radius: 10px;
+  /* user-select:all; */
+
+}
+
+#weightImg{
+  width: 10em;
+  margin: auto;
+  display: block;
+}
+
+/* workout page */
+
+#back {
+  position: fixed;
+  background: var(--ourOrange);
+  color: white;
+  z-index: 999;
+  user-select: none;
+  left: 10px;
+  bottom: 10px;
+}
+
+#back:active {
+  transform: translateY(2px);
+  opacity: 0.8;
+}
+
+#edit {
+  position: fixed;
+  background: var(--ourOrange);
+  color: white;
+  z-index: 999;
+  user-select: none;
+  right: 110px;
+  bottom: 10px;
+}
+
+#edit:active {
+  transform: translateY(2px);
+  opacity: 0.8;
+}
+
+#delete {
+  position: fixed;
+  background: var(--ourOrange);
+  color: white;
+  z-index: 999;
+  user-select: none;
+  right: 10px;
+  bottom: 10px;
+}
+
+#delete:active {
+  transform: translateY(2px);
+  opacity: 0.8;
+}
+
+#workoutRunContainer {
+  display: none;
+  padding: 10px;
+}
+
+#fixedWeightContainerW {
+  display: none;
+}
+
+#customWeightContainer {
+  display: none;
+}
+
+#workoutLiftContainer {
+  display: none;
+}
+
+.number {
+  width: 90%;
+}
+
+#runSubmitButtonW{
+  background-color: chartreuse;
+  margin: auto;
+}
+
+#liftSubmitButtonW{
+  background-color: chartreuse;
+  margin: auto;
+}
+
+#liftSubmitButton{
+  background-color: chartreuse;
+  margin: auto;
+  display: block;
+}
+
+#runSubmitButton{
+  background-color: chartreuse;
+  margin: auto;
+  display: block;
+}
+
+.customWeightEntry > td{
+  text-align: left;
+}

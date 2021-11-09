@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+  <link rel="stylesheet" href="styles/bootstrap-material-design.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+  <title>Workout Tracker</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark fixed-top">
+    <a id="homePageLink" class="navbar-brand" href="#">Home Page</a>
+  </nav>
+  <div id="workoutPage" class="container page-container">
+    <p id="dayHeaderWorkout" class="dayHeader">Workouts...</p>
+    <br>
+    <div id="workoutContainer">
+      <p id="workoutTitle" class="dayHeader">Loading...</p>
+    </div>
+  </div>
+
+  <div id="workoutRunContainer">
+    <div id="runSelection">
+      <div class="form-group">
+        <label for="runDistanceInputW">Title of Run</label>
+        <input class="form-control" id="runTitleInputW" placeholder="Run Title">
+      </div>
+      <div class="form-group">
+        <label for="runTimeInputW">Run Time</label>
+        <br>
+        <input id="runTimeInputW" type="text" class="html-duration-picker" min="00:00:10" max="5:00:00" required />
+        <!-- <label for="exampleInputEmail1">Run</label>
+          <input type="time" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter run duration" required> -->
+      </div>
+      <div class="form-group">
+        <label for="runDistanceInputW">Enter run distance (in miles)</label>
+        <input type="number" class="form-control" id="runDistanceInputW" placeholder="Run distance" min=".1" max="26"
+          step=".01" required>
+      </div>
+      <div class="row">
+        <button id="runSubmitButtonW" class="btn btn-primary">Submit</button>
+      </div>
+      <br>
+    </div>
+  </div>
+
+  <div id="workoutLiftContainer">
+    <div id="runSelection">
+      <div id="fixedWeightContainerW">
+        <div class="form-group">
+          <label for="setsInputW">Sets</label>
+          <input type="number" class="form-control" id="setsInputW" placeholder="Enter the number of sets you did">
+        </div>
+        <div class="form-group">
+          <label for="repsInputW">Reps</label>
+          <input type="number" class="form-control" id="repsInputW"
+            placeholder="Enter the number of reps you did each set">
+        </div>
+        <div class="form-group">
+          <label for="weightInputW">Weight</label>
+          <input type="number" class="form-control" id="weightInputW" placeholder="Enter the weight you lifted">
+        </div>
+      </div>
+      <div id="customWeightContainer">
+        <div class="customWeightEntry">
+          <table style="width:100%"></table>
+
+        </table>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <button id="liftSubmitButtonW" type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <button id="back" type="button " class="btn btn-primary ourButton">BACK</button>
+  <button id="delete" type="button " class="btn btn-primary ourButton">DELETE</button>
+
+
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/popper.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <script src="scripts/bootstrap-material-design.js"></script>
+  <script>
+    $("body").bootstrapMaterialDesign();
+  </script>
+  <script src="/__/firebase/7.18.0/firebase-app.js"></script>
+  <script src="/__/firebase/7.18.0/firebase-analytics.js"></script>
+  <script src="/__/firebase/7.18.0/firebase-auth.js"></script>
+  <script src="/__/firebase/7.18.0/firebase-firestore.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>

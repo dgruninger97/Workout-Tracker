@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+  <link rel="stylesheet" href="styles/bootstrap-material-design.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <title>Workout Tracker</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark fixed-top">
+    <a class="navbar-brand" href="#">Workout Tracker</a>
+  </nav>
+  <div id="mainPage" class="container page-container">
+
+  </div>
+  <div id="dateHeader">Today's date is:</div>
+  <!-- <div id="time">Time Loading...</div> -->
+  <div id="date">Date Loading...</div>
+
+  <div class="calendar-wrapper">
+    <button id="btnPrev" type="button"><i class="arrow left"></i>&nbsp;Prev</i></button>
+    <button id="btnNext" type="button">Next&nbsp;<i class="arrow right"></i></button>
+    <div id="divCal"></div>
+  </div>
+  <div id="legend">
+    
+    <h5>Key</h5>
+    <button id="runDemo" type="button" class="btn">Run</button>
+    <button id="liftDemo"type="button" class="btn">Lift</button>
+    <button id="bothDemo"type="button" class="btn">Both</button>
+    
+  </div>
+
+
+  <button id="logout" type="button " class="btn btn-primary ourButton">LOGOUT</button>
+
+  <button id="fab" type="button" class="btn btn-primary bmd-btn-fab" data-toggle="modal" data-target="#addWorkout">
+    <i class="material-icons">add</i>
+  </button>
+
+  <!-- Modals -->
+  <div class="modal fade" id="addWorkout" tabindex="-1" role="dialog" aria-labelledby="Add quote dialog"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div id="modalTitle" class="modal-header">
+          <h5 class="modal-title">Run or Lift?</h5>
+        </div>
+        <div class="modal-body">
+          <button id="runButton" type="button" class="btn btn-primary">Run</button>
+          <br>
+          <button id="liftButton" type="button" class="btn btn-primary">Lift</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn cancel" data-dismiss="modal">CANCEL</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/popper.js"></script>
+  <script src="scripts/bootstrap-material-design.js"></script>
+  <script>
+    $("body").bootstrapMaterialDesign();
+  </script>
+  <script src="/__/firebase/7.18.0/firebase-app.js"></script>
+  <script src="/__/firebase/7.18.0/firebase-analytics.js"></script>
+  <script src="/__/firebase/7.18.0/firebase-auth.js"></script>
+  <script src="/__/firebase/7.18.0/firebase-firestore.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>
